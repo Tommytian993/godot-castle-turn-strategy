@@ -1,3 +1,8 @@
-[gd_scene format=3 uid="uid://3shxbkudgyiq"]
+[gd_scene load_steps=2 format=3 uid="uid://3shxbkudgyiq"]
+
+[ext_resource type="TileSet" uid="uid://c73geenewd1nx" path="res://resources/nav_tile_set.tres" id="1_386oa"]
 
 [node name="LevelScene" type="Node"]
+
+[node name="NavLayer" type="TileMapLayer" parent="."]
+tile_set = ExtResource("1_386oa")
