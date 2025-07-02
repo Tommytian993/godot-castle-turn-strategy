@@ -6,3 +6,9 @@ func get_grid_position(world_position: Vector2) -> Vector2i:
 
 func get_world_position(grid_position: Vector2i) -> Vector2:
 	return nav_layer.to_global(nav_layer.map_to_local(grid_position))
+
+func get_mouse_world_position() -> Vector2:
+	return nav_layer.get_global_mouse_position()
+
+func get_mouse_grid_position() -> Vector2i:
+	return get_grid_position(get_mouse_world_position())
