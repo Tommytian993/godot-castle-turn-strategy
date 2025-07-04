@@ -11,3 +11,6 @@ func _unhandled_input(event: InputEvent) -> void:
 
 func _process(delta: float) -> void:
 	move(target_global_position, delta)
+
+func move(target_global_position: Vector2, delta: float) -> void:
+	global_position = global_position.move_toward(target_global_position, move_speed * delta)
