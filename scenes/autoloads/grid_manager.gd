@@ -1,5 +1,5 @@
 extends Node
-var nav_layer: TileMapLayer
+var nav_layer: NavLayer
 
 func get_grid_position(world_position: Vector2) -> Vector2i:
 	return nav_layer.local_to_map(nav_layer.to_local(world_position))
@@ -12,3 +12,6 @@ func get_mouse_world_position() -> Vector2:
 
 func get_mouse_grid_position() -> Vector2i:
 	return get_grid_position(get_mouse_world_position())
+
+func get_nav_grid_path(start_position: Vector2i, end_position: Vector2i) -> Array[Vector2i]:
+	return nav_layer.get_nav_grid_path(start_position, end_position)
