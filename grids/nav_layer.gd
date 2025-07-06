@@ -5,3 +5,7 @@ var a_star: AStar2D
 
 func _ready() -> void:
 	GridManager.nav_layer = self
+
+func initialize() -> void:
+	a_star = AStar2D.new()
+	a_star.region = get_used_rect()
