@@ -1,7 +1,7 @@
 extends TileMapLayer
 class_name NavLayer
 
-var a_star: AStar2D
+var a_star: AStarGrid2D
 
 func _ready() -> void:
 	initialize()
