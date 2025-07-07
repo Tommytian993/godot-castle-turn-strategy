@@ -13,4 +13,5 @@ func get_mouse_world_position() -> Vector2:
 func get_mouse_grid_position() -> Vector2i:
 	return get_grid_position(get_mouse_world_position())
 
-#s
+func get_nav_path(start_grid_position: Vector2i, end_grid_position: Vector2i) -> Array[Vector2i]:
+	return nav_layer.a_star.get_id_path(start_grid_position, end_grid_position)
