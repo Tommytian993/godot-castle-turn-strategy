@@ -15,7 +15,10 @@ func _unhandled_input(event: InputEvent) -> void:
 		GridManager.get_nav_world_path(global_position, target_global_position)
 
 func _process(delta: float) -> void:
-	move(target_global_position, delta)
+	if path and not path.is_empty():
+		move(path[0], delta)
+		if global_position == path[0]:
+			path.remove_at(0)
 
 func move(target_position: Vector2, delta: float) -> void:
 	global_position = global_position.move_toward(target_position, move_speed * delta)
