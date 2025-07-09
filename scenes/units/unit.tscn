@@ -7,5 +7,6 @@
 script = ExtResource("1_qgilm")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(45, 24)
 scale = Vector2(0.125, 0.125)
 texture = ExtResource("2_6e3tn")
