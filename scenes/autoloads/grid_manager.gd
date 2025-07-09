@@ -14,7 +14,7 @@ func get_mouse_grid_position() -> Vector2i:
 	return get_grid_position(get_mouse_world_position())
 
 func get_nav_grid_path(start_grid_position: Vector2i, end_grid_position: Vector2i) -> Array[Vector2i]:
-	if not nav_layer.a_star.is_in_bounds(start_grid_position) or not nav_layer.a_star.is_in_bounds(end_grid_position):
+	if not nav_layer.a_star.is_in_bounds(start_grid_position.x, start_grid_position.y) or not nav_layer.a_star.is_in_bounds(end_grid_position.x, end_grid_position.y):
 		push_error("Pathfinding point out of bounds: start=%s, end=%s" % [start_grid_position, end_grid_position])
 		return []
 	return nav_layer.a_star.get_id_path(start_grid_position, end_grid_position)
