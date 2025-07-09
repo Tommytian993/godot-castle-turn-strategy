@@ -6,6 +6,8 @@ var move_speed: float = 100.0
 var grid_position: Vector2i:
 	get: return GridManager.get_grid_position(global_position)
 
+var path: Array[Vector2]
+
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("left_mouse_click"):
 		var mouse_grid_position := GridManager.get_mouse_grid_position()
