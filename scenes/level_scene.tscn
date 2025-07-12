@@ -7,7 +7,7 @@
 
 [node name="LevelScene" type="Node"]
 
-[node name="NavLayer" type="TileMapLayer" parent="."]
+[node name="NavLayer" type="TileMap" parent="."]
 position = Vector2(0, 0)
 tile_set = ExtResource("1_386oa")
 script = ExtResource("2_a74lg")

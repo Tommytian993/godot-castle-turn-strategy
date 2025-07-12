@@ -1,4 +1,4 @@
-extends TileMapLayer
+extends TileMap
 class_name NavLayer
 
 var a_star: AStarGrid2D
@@ -13,6 +13,9 @@ func initialize() -> void:
 		push_error("NavLayer: tile_set is null")
 		return
 		
+	# 添加一些测试瓦片
+	add_test_tiles()
+	
 	a_star = AStarGrid2D.new()
 	
 	# 检查是否有有效的tile数据
@@ -27,3 +30,9 @@ func initialize() -> void:
 	a_star.diagonal_mode = AStarGrid2D.DIAGONAL_MODE_NEVER
 
 	a_star.update()
+
+func add_test_tiles() -> void:
+	# 添加一个简单的测试网格
+	for x in range(10):
+		for y in range(10):
+			set_cell(0, Vector2i(x, y), 0, Vector2i(0, 0))

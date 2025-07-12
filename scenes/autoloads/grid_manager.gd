@@ -33,7 +33,14 @@ func get_nav_grid_path(start_grid_position: Vector2i, end_grid_position: Vector2
 	return nav_layer.a_star.get_id_path(start_grid_position, end_grid_position)
 
 func get_nav_world_path(start_world_position: Vector2, end_world_position: Vector2) -> Array[Vector2]:
-	var grid_path := get_nav_grid_path(start_world_position, end_world_position)
+	# 将世界坐标转换为网格坐标
+	var start_grid = get_grid_position(start_world_position)
+	var end_grid = get_grid_position(end_world_position)
+	
+	print("Start world: ", start_world_position, " -> grid: ", start_grid)
+	print("End world: ", end_world_position, " -> grid: ", end_grid)
+	
+	var grid_path := get_nav_grid_path(start_grid, end_grid)
 	var world_path: Array[Vector2] = []
 	for grid_position in grid_path:
 		world_path.append(get_world_position(grid_position))
