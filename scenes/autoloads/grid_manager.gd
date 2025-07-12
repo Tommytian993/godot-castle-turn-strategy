@@ -2,18 +2,31 @@ extends Node
 var nav_layer: NavLayer
 
 func get_grid_position(world_position: Vector2) -> Vector2i:
+	if not nav_layer:
+		push_error("GridManager: nav_layer is null")
+		return Vector2i.ZERO
 	return nav_layer.local_to_map(nav_layer.to_local(world_position))
 
 func get_world_position(grid_position: Vector2i) -> Vector2:
+	if not nav_layer:
+		push_error("GridManager: nav_layer is null")
+		return Vector2.ZERO
 	return nav_layer.to_global(nav_layer.map_to_local(grid_position))
 
 func get_mouse_world_position() -> Vector2:
+	if not nav_layer:
+		push_error("GridManager: nav_layer is null")
+		return Vector2.ZERO
 	return nav_layer.get_global_mouse_position()
 
 func get_mouse_grid_position() -> Vector2i:
 	return get_grid_position(get_mouse_world_position())
 
 func get_nav_grid_path(start_grid_position: Vector2i, end_grid_position: Vector2i) -> Array[Vector2i]:
+	if not nav_layer or not nav_layer.a_star:
+		push_error("GridManager: nav_layer or a_star is null")
+		return []
+		
 	if not nav_layer.a_star.is_in_bounds(start_grid_position.x, start_grid_position.y) or not nav_layer.a_star.is_in_bounds(end_grid_position.x, end_grid_position.y):
 		push_error("Pathfinding point out of bounds: start=%s, end=%s" % [start_grid_position, end_grid_position])
 		return []
