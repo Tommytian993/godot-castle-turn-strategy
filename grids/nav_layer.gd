@@ -31,6 +31,11 @@ func initialize() -> void:
 
 	a_star.update()
 
+	var used_cells := get_used_cells()
+	for cell in used_cells:
+		if not get_cell_tile_data(cell).get_custom_data("walkable"):
+			a_star.set_point_solid(cell)
+
 func add_test_tiles() -> void:
 	# 添加一个简单的测试网格
 	for x in range(10):
