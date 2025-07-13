@@ -33,7 +33,7 @@ func initialize() -> void:
 
 	var used_cells := get_used_cells(0) # 使用图层0
 	for cell in used_cells:
-		if not get_cell_tile_data(cell).get_custom_data("walkable"):
+		if not get_cell_tile_data(0, cell).get_custom_data("walkable"):
 			a_star.set_point_solid(cell)
 
 func add_test_tiles() -> void:
