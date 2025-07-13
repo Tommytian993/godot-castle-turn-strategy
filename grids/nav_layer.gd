@@ -31,7 +31,7 @@ func initialize() -> void:
 
 	a_star.update()
 
-	var used_cells := get_used_cells()
+	var used_cells := get_used_cells(0) # 使用图层0
 	for cell in used_cells:
 		if not get_cell_tile_data(cell).get_custom_data("walkable"):
 			a_star.set_point_solid(cell)
