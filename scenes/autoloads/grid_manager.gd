@@ -45,3 +45,6 @@ func get_nav_world_path(start_world_position: Vector2, end_world_position: Vecto
 	for grid_position in grid_path:
 		world_path.append(get_world_position(grid_position))
 	return world_path
+
+func is_valid_grid(grid_position: Vector2i) -> bool:
+	return nav_layer.grid_data_dict.has(grid_position)
