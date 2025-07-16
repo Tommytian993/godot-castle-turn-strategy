@@ -70,7 +70,7 @@ func is_grid_occupied(grid_position: Vector2i) -> bool:
 		return false
 	return nav_layer.grid_data_dict[grid_position].occupied_unit != null
 
-# func get_grid_occupied(grid_position: Vector2i) -> Unit:
-# 	if not is_valid_grid(grid_position):
-# 		return null
-# 	return nav_layer.grid_data_dict[grid_position].occupied_unit
+func get_grid_occupied(grid_position: Vector2i) -> Unit:
+	if not is_valid_grid(grid_position):
+		return null
+	return nav_layer.grid_data_dict[grid_position].occupied_unit
