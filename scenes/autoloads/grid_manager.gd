@@ -64,3 +64,13 @@ func set_grid_walkable(grid_position: Vector2i, walkable: bool) -> void:
 		push_error("GridManager: grid_position is not valid: %s" % [grid_position])
 		return
 	nav_layer.grid_data_dict[grid_position].walkable = walkable
+
+func is_grid_occupied(grid_position: Vector2i) -> bool:
+	if not is_valid_grid(grid_position):
+		return false
+	return nav_layer.grid_data_dict[grid_position].occupied_unit != null
+
+# func get_grid_occupied(grid_position: Vector2i) -> Unit:
+# 	if not is_valid_grid(grid_position):
+# 		return null
+# 	return nav_layer.grid_data_dict[grid_position].occupied_unit
