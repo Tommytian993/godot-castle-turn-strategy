@@ -53,3 +53,8 @@ func get_nav_world_path(start_world_position: Vector2, end_world_position: Vecto
 
 func is_valid_grid(grid_position: Vector2i) -> bool:
 	return nav_layer.grid_data_dict.has(grid_position)
+
+func is_grid_walkable(grid_position: Vector2i) -> bool:
+	if not is_valid_grid(grid_position):
+		return false
+	return nav_layer.grid_data_dict[grid_position].walkable
