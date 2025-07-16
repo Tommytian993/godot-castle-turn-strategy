@@ -37,6 +37,7 @@ func initialize() -> void:
 		grid_data_dict[cell] = GridData.new()
 		if not get_cell_tile_data(0, cell).get_custom_data("walkable"):
 			a_star.set_point_solid(cell)
+			grid_data_dict[cell].walkable = false
 
 # func add_test_tiles() -> void:
 # 	# 添加一个简单的测试网格
