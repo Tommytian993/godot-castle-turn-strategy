@@ -2,6 +2,7 @@ extends TileMap
 class_name NavLayer
 
 var a_star: AStarGrid2D
+var grid_data_dict: Dictionary[Vector2i, GridData] = {}
 
 func _ready() -> void:
 	# 延迟初始化，确保tile_set已经加载
@@ -13,8 +14,8 @@ func initialize() -> void:
 		push_error("NavLayer: tile_set is null")
 		return
 		
-	# 添加一些测试瓦片
-	add_test_tiles()
+	# # 添加一些测试瓦片
+	# add_test_tiles()
 	
 	a_star = AStarGrid2D.new()
 	
@@ -33,11 +34,12 @@ func initialize() -> void:
 
 	var used_cells := get_used_cells(0) # 使用图层0
 	for cell in used_cells:
+		grid_data_dict[cell] = GridData.new()
 		if not get_cell_tile_data(0, cell).get_custom_data("walkable"):
 			a_star.set_point_solid(cell)
 
-func add_test_tiles() -> void:
-	# 添加一个简单的测试网格
-	for x in range(10):
-		for y in range(10):
-			set_cell(0, Vector2i(x, y), 0, Vector2i(0, 0))
+# func add_test_tiles() -> void:
+# 	# 添加一个简单的测试网格
+# 	for x in range(10):
+# 		for y in range(10):
+# 			set_cell(0, Vector2i(x, y), 0, Vector2i(0, 0))
