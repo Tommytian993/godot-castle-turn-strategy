@@ -7,3 +7,8 @@ class_name BaseAction
 var unit: Unit
 # since we are a turn base game
 var is_active: bool = false
+
+var on_action_finished: Callable
+
+func _ready() -> void:
+	unit = owner
