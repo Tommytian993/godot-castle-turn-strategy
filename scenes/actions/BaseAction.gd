@@ -11,4 +11,5 @@ var is_active: bool = false
 var on_action_finished: Callable
 
 func _ready() -> void:
+	# Set unit reference to the owner (parent Unit node)
 	unit = owner
