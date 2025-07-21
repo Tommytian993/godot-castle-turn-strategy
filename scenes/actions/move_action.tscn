@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://cavo014rsxd1c"]
+
+[ext_resource type="Script" uid="uid://c0ps6yva4lysu" path="res://scenes/actions/move_action.gd" id="1_kj8oy"]
+
+[node name="MoveAction" type="Node"]
+script = ExtResource("1_kj8oy")
+metadata/_custom_type_script = "uid://c8vx2nftq85c7"
