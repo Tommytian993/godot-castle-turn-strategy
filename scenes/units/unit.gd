@@ -1,6 +1,7 @@
 extends Node2D
 class_name Unit
 var is_performing_action: bool = false
+@onready var action_manager: ActionManager = $ActionManager
 
 var target_global_position: Vector2
 var grid_position: Vector2i:
@@ -24,11 +25,8 @@ func _unhandled_input(event: InputEvent) -> void:
 		
 		# 将网格坐标转换回世界坐标作为目标
 		target_global_position = GridManager.get_world_position(mouse_grid_position)
-		
-		# 计算路径
-		path = GridManager.get_nav_world_path(global_position, target_global_position)
-		
-		print("Mouse world pos: ", mouse_world_position)
-		print("Mouse grid pos: ", mouse_grid_position)
-		print("Target world pos: ", target_global_position)
-		print("Path: ", path)
+		is_performing_action = true
+		action_manager.get_action("move_action").start_action(mouse_grid_position, on_action_finished)
+	
+func on_action_finished() -> void:
+	is_performing_action = false
