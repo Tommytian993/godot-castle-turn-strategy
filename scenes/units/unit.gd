@@ -1,5 +1,6 @@
 extends Node2D
 class_name Unit
+var is_performing_action: bool = false
 
 var target_global_position: Vector2
 var grid_position: Vector2i:
@@ -9,6 +10,9 @@ var grid_position: Vector2i:
 		return GridManager.get_grid_position(global_position)
 
 func _unhandled_input(event: InputEvent) -> void:
+	if is_performing_action:
+		return
+	
 	if event.is_action_pressed("left_mouse_click"):
 		if not GridManager:
 			push_error("Unit: GridManager is null")
