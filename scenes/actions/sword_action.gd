@@ -1,11 +1,7 @@
 extends BaseAction
 class_name SwordAction
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func start_action(target_grid_position: Vector2i, on_action_finished: Callable) -> void:
+	super.start_action(target_grid_position, on_action_finished)
+	print("Start " + action_name)
+	finish_action()
