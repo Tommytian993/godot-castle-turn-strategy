@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=3 uid="uid://0mbpn2ypal3c"]
+
+[sub_resource type="GDScript" id="GDScript_p08w6"]
+script/source = "extends BaseAction
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+"
+
+[node name="FireballAction" type="Node"]
+script = SubResource("GDScript_p08w6")
+metadata/_custom_type_script = "uid://c8vx2nftq85c7"
