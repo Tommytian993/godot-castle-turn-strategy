@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://bjtd118xmdkgb"]
+
+[ext_resource type="Script" uid="uid://bgkpyax5fff3f" path="res://scenes/actions/sword_action.gd" id="1_if1y4"]
+
+[node name="SwordAction" type="Node"]
+script = ExtResource("1_if1y4")
+metadata/_custom_type_script = "uid://c8vx2nftq85c7"
