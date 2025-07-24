@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://bxu1thebwfwg6"]
+
+[node name="GameUI" type="CanvasLayer"]
+
+[node name="UnitActionsUI" type="MarginContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="UnitActionsUI"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+
+[node name="ActionContainer" type="HBoxContainer" parent="UnitActionsUI/MarginContainer"]
+layout_mode = 2
+
+[node name="ActionCardUI" type="Button" parent="UnitActionsUI/MarginContainer/ActionContainer"]
+layout_mode = 2
