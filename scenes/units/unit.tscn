@@ -18,11 +18,11 @@ texture = ExtResource("2_6e3tn")
 
 [node name="ActionsManager" parent="." instance=ExtResource("3_cx6aj")]
 
+[node name="BowAction" parent="ActionsManager" instance=ExtResource("5_44d7s")]
+
 [node name="MoveAction" parent="ActionsManager" instance=ExtResource("4_6k8ya")]
 action_id = "move_action"
 action_name = "Move"
-
-[node name="BowAction" parent="ActionsManager" instance=ExtResource("5_44d7s")]
 
 [node name="SwordAction" parent="ActionsManager" instance=ExtResource("6_fe0lq")]
 
