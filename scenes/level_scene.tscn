@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://3shxbkudgyiq"]
+[gd_scene load_steps=5 format=3 uid="uid://3shxbkudgyiq"]
 
 [ext_resource type="TileSet" uid="uid://c73geenewd1nx" path="res://resources/nav_tile_set.tres" id="1_386oa"]
 [ext_resource type="Script" uid="uid://cpj1qcey3pemw" path="res://grids/nav_layer.gd" id="2_a74lg"]
 [ext_resource type="PackedScene" uid="uid://cppuu4c2sqds5" path="res://scenes/units/unit.tscn" id="4_c8xsp"]
+[ext_resource type="PackedScene" uid="uid://bxu1thebwfwg6" path="res://scenes/ui/game_ui.tscn" id="4_fkwfp"]
 
 [node name="LevelScene" type="Node"]
 
@@ -14,3 +15,5 @@ script = ExtResource("2_a74lg")
 
 [node name="Unit" parent="." instance=ExtResource("4_c8xsp")]
 position = Vector2(5, 5)
+
+[node name="GameUI" parent="." instance=ExtResource("4_fkwfp")]
