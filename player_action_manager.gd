@@ -4,13 +4,12 @@ class_name PlayerActionManager
 var is_performing_action: bool = false
 var selected_action: BaseAction
 
-func set_selected_action(action: BaseAction) -> void:
+func _unhandled_input(event: InputEvent) -> void:
 	if is_performing_action:
 		return
-	if selected_action == action:
-		return
-	print("Select " + action.action_name)
-	selected_action = action
+	
+	if event.is_action_pressed("left_mouse_click"):
+		try_perform_selected_action()
 
 func try_perform_selected_action() -> void:
 	if is_performing_action:
