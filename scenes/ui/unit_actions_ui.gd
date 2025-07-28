@@ -12,5 +12,7 @@ func update_unit_actions_ui() -> void:
 	#这里我们先假设只有一个unit，从tree中获取unit的ActionsManager
 	var actions_manager: ActionsManager = get_tree().current_scene.get_node("Unit").get_node("ActionsManager")
 
+	#在更新UI之前，先清空旧的按钮
 	for node in action_container.get_children():
+		#将每个节点标记为待删除，在下一帧删除
 		node.queue_free()
