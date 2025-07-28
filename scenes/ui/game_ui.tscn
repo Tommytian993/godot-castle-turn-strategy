@@ -1,6 +1,4 @@
-[gd_scene load_steps=2 format=3 uid="uid://bxu1thebwfwg6"]
-
-[ext_resource type="PackedScene" uid="uid://cluq7d055e7l1" path="res://scenes/ui/action_card_ui.tscn" id="1_gwk6t"]
+[gd_scene format=3 uid="uid://bxu1thebwfwg6"]
 
 [node name="GameUI" type="CanvasLayer"]
 
@@ -20,18 +18,3 @@ size_flags_vertical = 8
 [node name="ActionContainer" type="HBoxContainer" parent="UnitActionsUI/MarginContainer"]
 layout_mode = 2
 theme_override_constants/separation = 8
-
-[node name="ActionCardUI" parent="UnitActionsUI/MarginContainer/ActionContainer" instance=ExtResource("1_gwk6t")]
-layout_mode = 2
-
-[node name="ActionCardUI2" type="Button" parent="UnitActionsUI/MarginContainer/ActionContainer"]
-custom_minimum_size = Vector2(24, 24)
-layout_mode = 2
-
-[node name="ActionCardUI3" type="Button" parent="UnitActionsUI/MarginContainer/ActionContainer"]
-custom_minimum_size = Vector2(24, 24)
-layout_mode = 2
-
-[node name="ActionCardUI4" type="Button" parent="UnitActionsUI/MarginContainer/ActionContainer"]
-custom_minimum_size = Vector2(24, 24)
-layout_mode = 2
