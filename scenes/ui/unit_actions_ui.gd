@@ -7,3 +7,6 @@ class_name UnitActionsUI
 @onready var action_container: HBoxContainer = $MarginContainer/ActionContainer
 #没按control
 #$MarginContainer/ActionContainer
+
+func update_unit_actions_ui() -> void:
+		var actions_manager: ActionsManager = get_tree().current_scene.get_node("Unit").get_node("ActionsManager")
