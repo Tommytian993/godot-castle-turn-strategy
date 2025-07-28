@@ -1,4 +1,7 @@
-[gd_scene format=3 uid="uid://bxu1thebwfwg6"]
+[gd_scene load_steps=3 format=3 uid="uid://bxu1thebwfwg6"]
+
+[ext_resource type="Script" uid="uid://c0oievldidab0" path="res://scenes/ui/unit_actions_ui.gd" id="1_gwk6t"]
+[ext_resource type="PackedScene" uid="uid://cluq7d055e7l1" path="res://scenes/ui/action_card_ui.tscn" id="2_xjfbv"]
 
 [node name="GameUI" type="CanvasLayer"]
 
@@ -9,6 +12,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/margin_bottom = 16
+script = ExtResource("1_gwk6t")
+action_card_ui = ExtResource("2_xjfbv")
 
 [node name="MarginContainer" type="MarginContainer" parent="UnitActionsUI"]
 layout_mode = 2
