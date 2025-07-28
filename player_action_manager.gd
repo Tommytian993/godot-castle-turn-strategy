@@ -11,3 +11,6 @@ func set_selected_action(action: BaseAction) -> void:
 		return
 	print("Select " + action.action_name)
 	selected_action = action
+
+func on_action_finished() -> void:
+	is_performing_action = false
