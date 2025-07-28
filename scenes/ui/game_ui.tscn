@@ -17,6 +17,7 @@ size_flags_vertical = 8
 
 [node name="ActionContainer" type="HBoxContainer" parent="UnitActionsUI/MarginContainer"]
 layout_mode = 2
+theme_override_constants/separation = 8
 
 [node name="ActionCardUI" type="Button" parent="UnitActionsUI/MarginContainer/ActionContainer"]
 custom_minimum_size = Vector2(24, 24)
