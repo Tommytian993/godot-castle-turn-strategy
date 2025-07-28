@@ -9,4 +9,5 @@ class_name UnitActionsUI
 #$MarginContainer/ActionContainer
 
 func update_unit_actions_ui() -> void:
-		var actions_manager: ActionsManager = get_tree().current_scene.get_node("Unit").get_node("ActionsManager")
+	#这里我们先假设只有一个unit，从tree中获取unit的ActionsManager
+	var actions_manager: ActionsManager = get_tree().current_scene.get_node("Unit").get_node("ActionsManager")
