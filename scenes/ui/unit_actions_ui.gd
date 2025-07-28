@@ -8,6 +8,10 @@ class_name UnitActionsUI
 #没按control
 #$MarginContainer/ActionContainer
 
+func _ready() -> void:
+	#使用call_deferred，在所有unit都ready后更新UI
+	call_deferred("update_unit_actions_ui")
+
 func update_unit_actions_ui() -> void:
 	#这里我们先假设只有一个unit，从tree中获取unit的ActionsManager
 	var actions_manager: ActionsManager = get_tree().current_scene.get_node("Unit").get_node("ActionsManager")
