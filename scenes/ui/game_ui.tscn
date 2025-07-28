@@ -1,4 +1,6 @@
-[gd_scene format=3 uid="uid://bxu1thebwfwg6"]
+[gd_scene load_steps=2 format=3 uid="uid://bxu1thebwfwg6"]
+
+[ext_resource type="Script" uid="uid://bqn626nb4ge75" path="res://scenes/ui/action_card_ui.gd" id="1_gwk6t"]
 
 [node name="GameUI" type="CanvasLayer"]
 
@@ -22,6 +24,8 @@ theme_override_constants/separation = 8
 [node name="ActionCardUI" type="Button" parent="UnitActionsUI/MarginContainer/ActionContainer"]
 custom_minimum_size = Vector2(24, 24)
 layout_mode = 2
+text = "Action"
+script = ExtResource("1_gwk6t")
 
 [node name="ActionCardUI2" type="Button" parent="UnitActionsUI/MarginContainer/ActionContainer"]
 custom_minimum_size = Vector2(24, 24)
