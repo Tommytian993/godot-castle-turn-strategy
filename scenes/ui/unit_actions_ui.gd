@@ -1,7 +1,7 @@
 extends MarginContainer
 class_name UnitActionsUI
 
-@export var action_card_ui: PackedScene
+@export var action_card_ui_scene: PackedScene
 #按住control 拖入
 #onready is more safer, it will wait for node to be ready, and check type at compile time
 @onready var action_container: HBoxContainer = $MarginContainer/ActionContainer
@@ -16,3 +16,9 @@ func update_unit_actions_ui() -> void:
 	for node in action_container.get_children():
 		#将每个节点标记为待删除，在下一帧删除
 		node.queue_free()
+	
+	#为每个动作创建对应的UI按钮
+	for action in actions_manager.actions:
+		var action_card_ui: ActionCardUI = action_card_ui_scene.instantiate()
+		action_container.add_child(action_card_ui)
+		action_card_ui.set_up(action)
