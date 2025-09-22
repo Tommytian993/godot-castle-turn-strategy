@@ -1,6 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://b6a851ntgg7ko"]
-
-[ext_resource type="Script" uid="uid://b1tjy0aq0etmu" path="res://actions_manager.gd" id="1_hlk4k"]
-
-[node name="ActionsManager" type="Node"]
-script = ExtResource("1_hlk4k")

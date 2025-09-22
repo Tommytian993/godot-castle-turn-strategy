@@ -1,6 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://m2turd6lw7u4"]
-
-[ext_resource type="Script" uid="uid://cq08psu28ug74" path="res://scenes/autoloads/player_action_manager.gd" id="1_le008"]
-
-[node name="PlayerActionManager" type="Node"]
-script = ExtResource("1_le008")

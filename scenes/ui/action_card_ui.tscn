@@ -1,8 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://cluq7d055e7l1"]
-
-[ext_resource type="Script" uid="uid://bqn626nb4ge75" path="res://scenes/ui/action_card_ui.gd" id="1_sh7nq"]
-
-[node name="ActionCardUI" type="Button"]
-custom_minimum_size = Vector2(24, 24)
-text = "Action"
-script = ExtResource("1_sh7nq")
