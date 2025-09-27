@@ -1,3 +1,8 @@
-[gd_scene format=3 uid="uid://t6in1unuhhcl"]
+[gd_scene load_steps=2 format=3 uid="uid://t6in1unuhhcl"]
+
+[ext_resource type="TileSet" uid="uid://dkyvxuvf65kwj" path="res://Sprites/Tile Sets/overworld_tile_set.tres" id="1_l45s6"]
 
 [node name="Main" type="Node2D"]
+
+[node name="OverworldTileMap" type="TileMapLayer" parent="."]
+tile_set = ExtResource("1_l45s6")
