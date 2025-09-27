@@ -1,0 +1,33 @@
+
+----- SPRITES -----
+
+Tiny Town by kenney
+License: CC0
+Source: https://www.kenney.nl/assets/tiny-town
+
+Tiny Dungeon by kenney
+License: CC0
+Source: https://www.kenney.nl/assets/tiny-dungeon
+
+
+----- AUDIO -----
+
+(Shield_Block)
+Impact Sounds by kenney
+License: CC0
+Source: https://www.kenney.nl/assets/impact-sounds
+
+(Hit_0, Hit_1, Hit_2)
+37 hits/punches by Independent.nu
+License: CC0
+Source: https://opengameart.org/content/37-hitspunches
+
+(Attack_Light, Attack_Heavy)
+Swishes Sound Pack
+License: CC0
+Source: https://opengameart.org/content/swishes-sound-pack
+
+(Bow_Shoot)
+Medieval sound effects - Weapon Textures by Ben Jaszczak & Brian Nelson
+License: CC0
+Source: https://opengameart.org/content/medieval-sound-effects-weapon-textures
