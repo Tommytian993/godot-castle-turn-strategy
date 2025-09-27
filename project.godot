@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="TurnBasedStrategy"
-run/main_scene="uid://3shxbkudgyiq"
+run/main_scene="uid://t6in1unuhhcl"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
 
