@@ -13,3 +13,21 @@ signal OnHealthChange
 var move_input: Vector2
 var look_direction: Vector2
 var external_force: Vector2
+
+func _physics_process(delta):
+	_move(delta)
+
+func _move(delta: float):
+	pass
+
+func take_damage(damage: int, force: Vector2):
+	pass
+
+func _die():
+	pass
+
+func heal(amount: int):
+	pass
+
+func add_force(force: Vector2):
+	pass
