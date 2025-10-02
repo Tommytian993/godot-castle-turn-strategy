@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=4 uid="uid://t6in1unuhhcl"]
+[gd_scene load_steps=5 format=4 uid="uid://t6in1unuhhcl"]
 
 [ext_resource type="TileSet" uid="uid://dkyvxuvf65kwj" path="res://Sprites/Tile Sets/overworld_tile_set.tres" id="1_l45s6"]
 [ext_resource type="Texture2D" uid="uid://d6eu6auofgw5" path="res://Sprites/Characters/Character_Knight.tres" id="2_6s5ae"]
+[ext_resource type="Script" uid="uid://bjt8a1ug440dn" path="res://Scripts/Character/player.gd" id="2_i8gr5"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6s5ae"]
 radius = 7.0
@@ -16,6 +17,7 @@ tile_map_data = PackedByteArray("AAAIAAYAAAAAAAAAAAAIAAcAAAAAAAAAAAAIAAgAAAAAAAA
 tile_set = ExtResource("1_l45s6")
 
 [node name="Player" type="CharacterBody2D" parent="."]
+script = ExtResource("2_i8gr5")
 
 [node name="Sprite" type="Sprite2D" parent="Player"]
 position = Vector2(1, 1)
