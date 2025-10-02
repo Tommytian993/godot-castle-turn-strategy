@@ -33,4 +33,4 @@ func heal(amount: int):
 	pass
 
 func add_force(force: Vector2):
-	external_force += force / weights
+	external_force += force / weight

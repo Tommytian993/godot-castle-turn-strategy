@@ -17,8 +17,6 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-GridManager="*res://scenes/autoloads/grid_manager.tscn"
-
 [display]
 
 window/size/viewport_width=1280
