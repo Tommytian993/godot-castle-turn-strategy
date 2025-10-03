@@ -34,9 +34,10 @@ character = NodePath("..")
 position = Vector2(1, 1)
 shape = SubResource("CapsuleShape2D_6s5ae")
 
-[node name="Enemy" type="CharacterBody2D" parent="."]
+[node name="Enemy" type="CharacterBody2D" parent="." node_paths=PackedStringArray("target")]
 position = Vector2(22, 0)
 script = ExtResource("5_rmeny")
+target = NodePath("../Player")
 
 [node name="Sprite" type="Sprite2D" parent="Enemy" node_paths=PackedStringArray("character")]
 position = Vector2(1, 8)

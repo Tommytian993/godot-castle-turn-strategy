@@ -14,7 +14,6 @@ var target_distance: float
 func _process(delta):
 	# 如果没有目标则返回
 	if not target: return
-	
 	# 计算朝向目标的方向
 	target_direction = global_position.direction_to(target.global_position)
 	# 计算到目标的距离
