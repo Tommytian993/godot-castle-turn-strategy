@@ -21,8 +21,9 @@ tile_set = ExtResource("1_l45s6")
 script = ExtResource("2_i8gr5")
 
 [node name="Sprite" type="Sprite2D" parent="Player"]
-position = Vector2(1, 1)
+position = Vector2(1, 8)
 texture = ExtResource("2_6s5ae")
+offset = Vector2(0, -7)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
 position = Vector2(1, 1)
