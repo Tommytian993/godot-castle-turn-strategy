@@ -20,4 +20,4 @@ func _process(delta: float):
 		var time = Time.get_unix_time_from_system()
 		target_rot = sin(time * wobble_speed) * wobble_amount
 
-	rotation_degrees = lerpf(rotation_degrees, target_rot, delta)
+	rotation_degrees = lerpf(rotation_degrees, target_rot, delta * 20)
