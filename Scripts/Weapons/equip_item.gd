@@ -20,7 +20,13 @@ func _unequip():
 	pass
 
 func _try_use() -> bool:
-	pass
+	if not can_use:
+		return false
+	if Time.get_unix_time_from_system() - last_use_time < use_rate:
+		return false
+	last_use_time = Time.get_unix_time_from_system()
+	_use()
+	return true
 
 func _use():
 	pass
