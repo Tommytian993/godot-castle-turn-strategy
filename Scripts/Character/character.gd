@@ -6,7 +6,7 @@ signal OnHealthChange
 
 @export var cur_hp: int = 10
 @export var max_hp: int = 10
-@export var move_speed: float = 20
+@export var move_speed: float = 30
 @export var force_drag: float = 5
 @export var weight: float = 1.0
 
