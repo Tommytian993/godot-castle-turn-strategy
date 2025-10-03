@@ -8,10 +8,10 @@ var owner_character: Character
 var can_use: bool = true
 
 func _process(delta: float):
-	pass
+	global_rotation = lerp_angle(global_rotation, aim_angle, 4)
 
 func set_aim_direction(aim_dir: Vector2):
-	pass
+	aim_angle = aim_dir.angle()
 
 func _equip():
 	pass
