@@ -4,9 +4,13 @@ extends Sprite2D
 @export var character: Character
 
 @export var wobble_speed: float = 15
-@sexport var wobble_amount: float = 5
+@export var wobble_amount: float = 5
 
 func _process(delta: float):
+	# 检查 character 是否为空，避免错误
+	if character == null:
+		return
+		
 	# sprite flipping
 	flip_h = character.look_direction.x < 0
 
