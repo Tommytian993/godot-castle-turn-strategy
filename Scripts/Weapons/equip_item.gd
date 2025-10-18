@@ -14,7 +14,7 @@ var can_use: bool = true
 
 func _process(delta: float):
 	# 平滑旋转到瞄准角度
-	global_rotation = lerp_angle(global_rotation, aim_angle, 4)
+	global_rotation = lerp_angle(global_rotation, aim_angle, 4 * delta)
 
 func set_aim_direction(aim_dir: Vector2):
 	# 设置瞄准方向，将Vector2转换为角度
