@@ -49,10 +49,10 @@ hit_force = 150.0
 range = 30.0
 
 [node name="Sprite" type="Sprite2D" parent="."]
-position = Vector2(9, 0)
+position = Vector2(0, 0)
 rotation = 1.56963
 texture = ExtResource("2_g87a1")
-offset = Vector2(0, -11)
+offset = Vector2(0, -5)
 
 [node name="HitBox" type="Area2D" parent="."]
 
