@@ -6,7 +6,8 @@ var current_weapon: Weapon
 @onready var character: Character = $".."
 
 func _ready():
-	pass
+	if weapon_to_equip:
+		equip_weapon(weapon_to_equip)
 
 func equip_weapon(weapon_scene: PackedScene):
 	if current_weapon:
