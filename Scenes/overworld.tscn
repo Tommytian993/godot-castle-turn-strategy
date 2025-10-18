@@ -43,6 +43,7 @@ hit_force = 150.0
 range = 30.0
 
 [node name="Sprite" type="Sprite2D" parent="Player/Weapon_Sword"]
+rotation = 1.56401
 texture = ExtResource("6_auytq")
 
 [node name="Enemy" type="CharacterBody2D" parent="." node_paths=PackedStringArray("target")]
