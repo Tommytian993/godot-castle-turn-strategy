@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=4 uid="uid://t6in1unuhhcl"]
+[gd_scene load_steps=11 format=4 uid="uid://t6in1unuhhcl"]
 
 [ext_resource type="TileSet" uid="uid://dkyvxuvf65kwj" path="res://Sprites/Tile Sets/overworld_tile_set.tres" id="1_l45s6"]
 [ext_resource type="Texture2D" uid="uid://d6eu6auofgw5" path="res://Sprites/Characters/Character_Knight.tres" id="2_6s5ae"]
@@ -12,6 +12,8 @@
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6s5ae"]
 radius = 7.0
 height = 14.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2ngsa"]
 
 [node name="Main" type="Node2D"]
 
@@ -43,8 +45,15 @@ hit_force = 150.0
 range = 30.0
 
 [node name="Sprite" type="Sprite2D" parent="Player/Weapon_Sword"]
-rotation = 1.56401
+rotation = 1.56963
 texture = ExtResource("6_auytq")
+offset = Vector2(0, -11)
+
+[node name="HitBox" type="Area2D" parent="Player/Weapon_Sword"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player/Weapon_Sword/HitBox"]
+rotation = 0.00100525
+shape = SubResource("RectangleShape2D_2ngsa")
 
 [node name="Enemy" type="CharacterBody2D" parent="." node_paths=PackedStringArray("target")]
 position = Vector2(22, 0)
