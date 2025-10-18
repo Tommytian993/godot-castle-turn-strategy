@@ -7,3 +7,6 @@ func _process(delta: float):
 	
 	if current_weapon:
 		current_weapon.set_aim_direction(mouse_dir)
+	
+	if Input.is_action_just_pressed("attack"):
+		current_weapon._try_use()
