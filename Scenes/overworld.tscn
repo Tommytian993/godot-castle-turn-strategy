@@ -1,56 +1,15 @@
-[gd_scene load_steps=14 format=4 uid="uid://t6in1unuhhcl"]
+[gd_scene load_steps=8 format=4 uid="uid://t6in1unuhhcl"]
 
 [ext_resource type="TileSet" uid="uid://dkyvxuvf65kwj" path="res://Sprites/Tile Sets/overworld_tile_set.tres" id="1_l45s6"]
 [ext_resource type="Texture2D" uid="uid://d6eu6auofgw5" path="res://Sprites/Characters/Character_Knight.tres" id="2_6s5ae"]
 [ext_resource type="Script" uid="uid://bjt8a1ug440dn" path="res://Scripts/Character/player.gd" id="2_i8gr5"]
 [ext_resource type="Script" uid="uid://cnyfg4dghffyx" path="res://Scripts/Character/character_visual.gd" id="4_s368d"]
-[ext_resource type="Script" uid="uid://bufdphvlc7831" path="res://Scripts/Weapons/melee_weapon.gd" id="5_2ngsa"]
 [ext_resource type="Texture2D" uid="uid://dagt18rdsjnc2" path="res://Sprites/Characters/Character_EvilWizard.tres" id="5_4qj6l"]
 [ext_resource type="Script" uid="uid://b2o37qfr17lu" path="res://Scripts/Character/enemy.gd" id="5_rmeny"]
-[ext_resource type="Texture2D" uid="uid://y0wxnt6pofk3" path="res://Sprites/Items/Item_Sword.tres" id="6_auytq"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6s5ae"]
 radius = 7.0
 height = 14.0
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_2ngsa"]
-
-[sub_resource type="Animation" id="Animation_2ngsa"]
-resource_name = "attack"
-length = 0.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.166667, 0.266667, 0.333333, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(0, 0), Vector2(-8, 0), Vector2(-8, 0), Vector2(9, 0), Vector2(9, 0), Vector2(9, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_auytq"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, 0)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_auytq"]
-_data = {
-&"RESET": SubResource("Animation_auytq"),
-&"attack": SubResource("Animation_2ngsa")
-}
 
 [node name="Main" type="Node2D"]
 
@@ -74,28 +33,6 @@ character = NodePath("..")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
 position = Vector2(1, 1)
 shape = SubResource("CapsuleShape2D_6s5ae")
-
-[node name="Weapon_Sword" type="Node2D" parent="Player"]
-script = ExtResource("5_2ngsa")
-damage = 1
-hit_force = 150.0
-range = 30.0
-
-[node name="Sprite" type="Sprite2D" parent="Player/Weapon_Sword"]
-rotation = 1.56963
-texture = ExtResource("6_auytq")
-offset = Vector2(0, -11)
-
-[node name="HitBox" type="Area2D" parent="Player/Weapon_Sword"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player/Weapon_Sword/HitBox"]
-rotation = 0.00100525
-shape = SubResource("RectangleShape2D_2ngsa")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Player/Weapon_Sword"]
-libraries = {
-&"": SubResource("AnimationLibrary_auytq")
-}
 
 [node name="Enemy" type="CharacterBody2D" parent="." node_paths=PackedStringArray("target")]
 position = Vector2(28, -40)
