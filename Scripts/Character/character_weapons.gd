@@ -21,4 +21,8 @@ func equip_weapon(weapon_scene: PackedScene):
 	current_weapon._equip()
 
 func unequip_weapon():
-	pass
+	if not current_weapon:
+		return
+
+	current_weapon._unequip()
+	current_weapon.queue_free()
