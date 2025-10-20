@@ -28,3 +28,6 @@ func _process(delta):
 	else:
 		# 否则停止移动
 		move_input = Vector2.ZERO
+
+func die():
+	queue_free()
