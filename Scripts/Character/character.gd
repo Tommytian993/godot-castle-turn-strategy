@@ -25,6 +25,7 @@ func _move(delta: float):
 
 func take_damage(damage: int, force: Vector2):
 	cur_hp -= damage
+	print("Character took ", damage, " damage. Remaining HP: ", cur_hp)
 	add_force(force)
 	
 	if cur_hp <= 0:

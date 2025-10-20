@@ -29,5 +29,6 @@ func _process(delta):
 		# 否则停止移动
 		move_input = Vector2.ZERO
 
-func die():
+func _die():
+	print("Enemy died! Remaining HP: ", cur_hp)
 	queue_free()
