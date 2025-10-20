@@ -24,11 +24,14 @@ func _move(delta: float):
 	move_and_slide()
 
 func take_damage(damage: int, force: Vector2):
+	print("=== DAMAGE DEBUG ===")
+	print("Character: ", name, " took ", damage, " damage")
 	cur_hp -= damage
-	print("Character took ", damage, " damage. Remaining HP: ", cur_hp)
+	print("Remaining HP: ", cur_hp)
 	add_force(force)
 	
 	if cur_hp <= 0:
+		print("Character ", name, " is dying!")
 		_die()
 
 func _die():
