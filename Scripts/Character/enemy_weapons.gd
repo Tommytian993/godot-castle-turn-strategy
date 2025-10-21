@@ -11,3 +11,5 @@ func _process(delta: float):
 	var target_dist: float = global_position.distance_to(me.target.global_position)
 	
 	current_weapon.set_aim_direction(target_dir)
+
+	current_weapon._try_use()
