@@ -1,11 +1,13 @@
-extends Node
+class_name EnemyWeapons
+extends CharacterWeapons
 
+@onready var me: Enemy = $".."
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func _process(delta: float):
+	if not current_weapon:
+		return
+	
+	var target_dir: Vector2 = global_position.direction_to(me.target.global_position)
+	var target_dist: float = global_position.distance_to(me.target.global_position)
+	
+	current_weapon.set_aim_direction(target_dir)
