@@ -12,4 +12,5 @@ func _process(delta: float):
 	
 	current_weapon.set_aim_direction(target_dir)
 
-	current_weapon._try_use()
+	if target_dist < current_weapon.range:
+		current_weapon._try_use()
