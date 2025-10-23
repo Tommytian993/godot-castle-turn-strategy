@@ -44,13 +44,17 @@ script = ExtResource("5_2ngsa")
 weapon_to_equip = ExtResource("6_auytq")
 
 [node name="Weapon_Axe" type="Node2D" parent="Player/PlayerWeapons"]
+rotation = -0.417999
 script = ExtResource("7_c0h7r")
 damage = 2
 hit_force = 200.0
 use_rate = 0.8
 
 [node name="Sprite" type="Sprite2D" parent="Player/PlayerWeapons/Weapon_Axe"]
+position = Vector2(9, 5)
+rotation = 1.55931
 texture = ExtResource("8_v1c68")
+flip_h = true
 
 [node name="Enemy" type="CharacterBody2D" parent="." node_paths=PackedStringArray("target")]
 position = Vector2(28, -40)
