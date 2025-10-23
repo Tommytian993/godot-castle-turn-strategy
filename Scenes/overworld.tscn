@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=4 uid="uid://t6in1unuhhcl"]
+[gd_scene load_steps=11 format=4 uid="uid://t6in1unuhhcl"]
 
 [ext_resource type="TileSet" uid="uid://dkyvxuvf65kwj" path="res://Sprites/Tile Sets/overworld_tile_set.tres" id="1_l45s6"]
 [ext_resource type="Texture2D" uid="uid://d6eu6auofgw5" path="res://Sprites/Characters/Character_Knight.tres" id="2_6s5ae"]
@@ -8,73 +8,11 @@
 [ext_resource type="Texture2D" uid="uid://dagt18rdsjnc2" path="res://Sprites/Characters/Character_EvilWizard.tres" id="5_4qj6l"]
 [ext_resource type="Script" uid="uid://b2o37qfr17lu" path="res://Scripts/Character/enemy.gd" id="5_rmeny"]
 [ext_resource type="PackedScene" uid="uid://b4gox4ynr1k4b" path="res://Scenes/Weapons/weapon_sword.tscn" id="6_auytq"]
-[ext_resource type="Script" uid="uid://bufdphvlc7831" path="res://Scripts/Weapons/melee_weapon.gd" id="7_c0h7r"]
-[ext_resource type="Texture2D" uid="uid://nnn5juuro7la" path="res://Sprites/Items/Item_Axe.tres" id="8_v1c68"]
 [ext_resource type="Script" uid="uid://bfh46jrpgqq4g" path="res://Scripts/Character/enemy_weapons.gd" id="9_auytq"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6s5ae"]
 radius = 7.0
 height = 14.0
-
-[sub_resource type="Animation" id="Animation_v1c68"]
-resource_name = "attack"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.233333, 0.366667, 0.466667, 0.6, 0.766667),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(11.0689, 7.10493), Vector2(4, 1), Vector2(4, 1), Vector2(17, 9), Vector2(17, 9), Vector2(11.0689, 7.10493)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite:rotation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.233333, 0.366667, 0.466667, 0.6, 0.766667),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [1.55931, 0.66148, 0.66148, 1.78373, 1.78373, 1.55931]
-}
-
-[sub_resource type="Animation" id="Animation_dd6r4"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(11.0689, 7.10493)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite:rotation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [1.55931]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_dd6r4"]
-_data = {
-&"RESET": SubResource("Animation_dd6r4"),
-&"attack": SubResource("Animation_v1c68")
-}
 
 [node name="Main" type="Node2D"]
 
@@ -102,24 +40,6 @@ shape = SubResource("CapsuleShape2D_6s5ae")
 [node name="PlayerWeapons" type="Node2D" parent="Player"]
 script = ExtResource("5_2ngsa")
 weapon_to_equip = ExtResource("6_auytq")
-
-[node name="Weapon_Axe" type="Node2D" parent="Player/PlayerWeapons"]
-rotation = -0.417999
-script = ExtResource("7_c0h7r")
-damage = 2
-hit_force = 200.0
-use_rate = 0.8
-
-[node name="Sprite" type="Sprite2D" parent="Player/PlayerWeapons/Weapon_Axe"]
-position = Vector2(11.0689, 7.10493)
-rotation = 1.55931
-texture = ExtResource("8_v1c68")
-flip_h = true
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Player/PlayerWeapons/Weapon_Axe"]
-libraries = {
-&"": SubResource("AnimationLibrary_dd6r4")
-}
 
 [node name="Enemy" type="CharacterBody2D" parent="." node_paths=PackedStringArray("target")]
 position = Vector2(28, -40)
