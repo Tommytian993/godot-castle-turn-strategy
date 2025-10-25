@@ -29,3 +29,7 @@ func _process(delta: float):
 
 func _on_take_damage(hit_force: Vector2):
 	print("DAMAGED")
+	# 受击闪烁效果
+	modulate = Color.BLACK
+	await get_tree().create_timer(0.08).timeout
+	modulate = Color.WHITE
