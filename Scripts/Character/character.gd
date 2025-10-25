@@ -33,6 +33,9 @@ func take_damage(damage: int, force: Vector2):
 	if cur_hp <= 0:
 		print("Character ", name, " is dying!")
 		_die()
+	else:
+		OnTakeDamage.emit(force)
+		OnHealthChange.emit()
 
 func _die():
 	pass
