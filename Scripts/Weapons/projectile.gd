@@ -12,3 +12,7 @@ func initialize(owner_character: Character):
 
 func _process(delta: float):
 	pass
+
+
+func _on_body_entered(body: Node2D) -> void:
+	pass
