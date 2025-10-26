@@ -1,11 +1,14 @@
-extends Node
+class_name Projectile
+extends Area2D
 
+@export var damage: int = 1
+@export var speed: float = 50
+@export var hit_force: float = 30
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
+var owner_character: Character
 
+func initialize(owner_character: Character):
+	pass
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(delta: float):
 	pass
