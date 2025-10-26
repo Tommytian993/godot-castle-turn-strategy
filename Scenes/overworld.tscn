@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=4 uid="uid://t6in1unuhhcl"]
+[gd_scene load_steps=14 format=4 uid="uid://t6in1unuhhcl"]
 
 [ext_resource type="TileSet" uid="uid://dkyvxuvf65kwj" path="res://Sprites/Tile Sets/overworld_tile_set.tres" id="1_l45s6"]
 [ext_resource type="Texture2D" uid="uid://d6eu6auofgw5" path="res://Sprites/Characters/Character_Knight.tres" id="2_6s5ae"]
@@ -10,10 +10,14 @@
 [ext_resource type="PackedScene" uid="uid://b4gox4ynr1k4b" path="res://Scenes/Weapons/weapon_sword.tscn" id="6_auytq"]
 [ext_resource type="PackedScene" uid="uid://dpmu8ps8mwvw" path="res://Scenes/Weapons/weapon_axe.tscn" id="6_c0h7r"]
 [ext_resource type="Script" uid="uid://bfh46jrpgqq4g" path="res://Scripts/Character/enemy_weapons.gd" id="9_auytq"]
+[ext_resource type="Texture2D" uid="uid://bxg4rbiy32ydv" path="res://Sprites/Items/Item_Arrow.tres" id="11_v1c68"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6s5ae"]
 radius = 7.0
 height = 14.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v1c68"]
+size = Vector2(16.7652, 8.48095)
 
 [node name="Main" type="Node2D"]
 
@@ -62,3 +66,16 @@ shape = SubResource("CapsuleShape2D_6s5ae")
 position = Vector2(1, 4)
 script = ExtResource("9_auytq")
 weapon_to_equip = ExtResource("6_auytq")
+
+[node name="Arrow" type="Area2D" parent="."]
+position = Vector2(33, 4.76837e-07)
+rotation = 6.38704
+
+[node name="Sprite" type="Sprite2D" parent="Arrow"]
+rotation = 0.628768
+texture = ExtResource("11_v1c68")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Arrow"]
+position = Vector2(1.49192, -0.155503)
+rotation = -0.132342
+shape = SubResource("RectangleShape2D_v1c68")
