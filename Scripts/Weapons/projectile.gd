@@ -11,7 +11,7 @@ func initialize(owner_character: Character):
 	self.owner_character = owner_character
 
 func _process(delta: float):
-	pass
+	translate(transform.x * speed * delta)
 
 
 func _on_body_entered(body: Node2D) -> void:
