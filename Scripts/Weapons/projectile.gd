@@ -8,7 +8,7 @@ extends Area2D
 var owner_character: Character
 
 func initialize(owner_character: Character):
-	pass
+	self.owner_character = owner_character
 
 func _process(delta: float):
 	pass
